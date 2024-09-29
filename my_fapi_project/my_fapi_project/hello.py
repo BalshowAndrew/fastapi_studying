@@ -2,9 +2,9 @@ from fastapi import FastAPI
 
 app = FastAPI() # app - это объект верхнего уровня, представляющий веб-приложение
 
-@app.get("/hi")
-def greet():
-    return "Hello? World?"
+@app.get("/hi/{who}")
+def greet(who):
+    return f"Hello? World? {who}?"
 
 if __name__ == "__main__":
     import uvicorn
