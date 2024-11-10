@@ -1,10 +1,15 @@
 from fastapi import FastAPI
 
-app = FastAPI() # app - это объект верхнего уровня, представляющий веб-приложение
+app = FastAPI()
+
 
 @app.get("/hi")
-def greet(who):
-    return f"Hello? {who}?"
+def greet():
+    return "Hello? Who?"
+
+@app.get("/happy")
+def happy(status_code=200):
+    return ":)"
 
 
 if __name__ == "__main__":
